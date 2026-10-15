@@ -61,11 +61,16 @@
         <section class="hero-section" id="hero">
             <!-- Dedicated Sharp Hero Video Layer (Zero blur) -->
             <div class="hero-video-container" aria-hidden="true">
-                <video autoplay loop muted playsinline id="hero-bg-video">
+                <video autoplay loop playsinline id="hero-bg-video">
                     <source src="assets/bg-video.mp4" type="video/mp4" />
                 </video>
                 <div class="hero-video-overlay"></div>
             </div>
+
+            <!-- Floating Hero Audio Toggle Button -->
+            <button class="hero-audio-btn glass-panel interactive-link" id="hero-audio-toggle" aria-label="Toggle Hero Video Audio">
+                📁 Unmute Audio
+            </button>
 
             <div class="hero-inner-container">
                 <div class="hero-content reveal-on-scroll is-visible">
@@ -79,12 +84,6 @@
                     <div class="hero-headline-wrap">
                         <h1 class="hero-title">AI/ML<br>Engineer</h1>
                         <p class="hero-subtitle">& Full-Stack Developer</p>
-                    </div>
-
-                    <!-- Status Tag with Glowing Pulse Dot -->
-                    <div class="status-badge" id="status-badge">
-                        <span class="pulse-dot"></span>
-                        <span class="status-label">OPEN TO OPPORTUNITIES</span>
                     </div>
 
                     <p class="hero-summary">
@@ -306,12 +305,44 @@
                 </div>
 
                 <div class="works-grid reveal-stagger">
-                    <!-- Project 1: FIT-LOOP -->
+                    <!-- Project 1: Pharmexus Intelligence -->
+                    <a href="https://pharmexus.app" target="_blank" rel="noopener noreferrer"
+                        class="project-card glass-panel interactive-link" id="project-pharmexus">
+                        <div class="project-top">
+                            <div class="project-badge-row">
+                                <span class="tag-pill">ENTERPRISE HEALTHCARE AI PLATFORM</span>
+                                <span class="live-indicator"><span class="tiny-pulse"></span> LIVE</span>
+                            </div>
+                            <div class="card-arrow-wrap">
+                                <i class="fa-solid fa-arrow-up-right card-arrow arrow-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3 class="project-title">Pharmexus Intelligence</h3>
+                            <p class="project-desc">
+                                Enterprise Market Access & Payer Formulary Impact Platform powered by Medallion Lakehouse architecture (Spark/DuckDB), causal regressions, and conversational NL-to-SQL for CMS Medicare Part D.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-tech-tags">
+                                <span>Databricks</span>
+                                <span>Spark</span>
+                                <span>DuckDB</span>
+                                <span>Causal ML</span>
+                                <span>FastAPI</span>
+                            </div>
+                            <span class="project-link-label">Visit Platform <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Project 2: FIT-LOOP Platform -->
                     <a href="https://fit-loop-jade.vercel.app" target="_blank" rel="noopener noreferrer"
                         class="project-card glass-panel interactive-link" id="project-fit-loop">
                         <div class="project-top">
                             <div class="project-badge-row">
-                                <span class="tag-pill">AI Fitness Platform</span>
+                                <span class="tag-pill">AI FITNESS PLATFORM</span>
                                 <span class="live-indicator"><span class="tiny-pulse"></span> LIVE</span>
                             </div>
                             <div class="card-arrow-wrap">
@@ -322,8 +353,7 @@
                         <div class="project-body">
                             <h3 class="project-title">FIT-LOOP Platform</h3>
                             <p class="project-desc">
-                                Gamified AI-driven fitness and wellness ecosystem featuring dynamic streak tracking,
-                                high-performance FastAPI backends, and personalized caloric expenditure algorithms.
+                                Gamified AI-driven fitness ecosystem featuring dynamic streak tracking, high-performance FastAPI backends, and personalized caloric expenditure algorithms.
                             </p>
                         </div>
 
@@ -338,12 +368,12 @@
                         </div>
                     </a>
 
-                    <!-- Project 2: College Admission Predictor -->
+                    <!-- Project 3: College Admission Predictor -->
                     <a href="https://thiscollege-admission-ml.vercel.app" target="_blank" rel="noopener noreferrer"
                         class="project-card glass-panel interactive-link" id="project-college-ml">
                         <div class="project-top">
                             <div class="project-badge-row">
-                                <span class="tag-pill">Predictive ML Model</span>
+                                <span class="tag-pill">PREDICTIVE ML MODEL</span>
                                 <span class="live-indicator"><span class="tiny-pulse"></span> LIVE</span>
                             </div>
                             <div class="card-arrow-wrap">
@@ -354,8 +384,7 @@
                         <div class="project-body">
                             <h3 class="project-title">College Admission Predictor</h3>
                             <p class="project-desc">
-                                Machine learning regression engine predicting TNEA engineering cutoffs and acceptance
-                                probabilities utilizing an optimized XGBoost gradient boosting pipeline.
+                                Machine learning regression engine predicting TNEA engineering cutoffs and acceptance probabilities utilizing an optimized XGBoost gradient boosting pipeline.
                             </p>
                         </div>
 
@@ -370,12 +399,12 @@
                         </div>
                     </a>
 
-                    <!-- Project 3: Fresh Chicken E-Commerce -->
+                    <!-- Project 4: Fresh Chicken E-Commerce -->
                     <a href="https://chicken-shop-website-phi.vercel.app" target="_blank" rel="noopener noreferrer"
                         class="project-card glass-panel interactive-link" id="project-chicken-shop">
                         <div class="project-top">
                             <div class="project-badge-row">
-                                <span class="tag-pill">Client E-Commerce Web App</span>
+                                <span class="tag-pill">CLIENT E-COMMERCE WEB APP</span>
                                 <span class="live-indicator"><span class="tiny-pulse"></span> LIVE</span>
                             </div>
                             <div class="card-arrow-wrap">
@@ -386,8 +415,7 @@
                         <div class="project-body">
                             <h3 class="project-title">Fresh Chicken E-Commerce</h3>
                             <p class="project-desc">
-                                End-to-end production web storefront developed for client meat retail operations,
-                                featuring instant order inquiries, responsive catalog displays, and seamless mobile UX.
+                                End-to-end production web storefront developed for client meat retail operations, featuring instant order inquiries, responsive catalog displays, and seamless mobile UX.
                             </p>
                         </div>
 
@@ -399,6 +427,99 @@
                                 <span>Vercel</span>
                             </div>
                             <span class="project-link-label">View Storefront <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Project 5: Cafe Obregado -->
+                    <a href="https://cafe-obregado.vercel.app" target="_blank" rel="noopener noreferrer"
+                        class="project-card glass-panel interactive-link" id="project-cafe-obregado">
+                        <div class="project-top">
+                            <div class="project-badge-row">
+                                <span class="tag-pill">HOSPITALITY WEB APP</span>
+                                <span class="live-indicator"><span class="tiny-pulse"></span> LIVE</span>
+                            </div>
+                            <div class="card-arrow-wrap">
+                                <i class="fa-solid fa-arrow-up-right card-arrow arrow-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3 class="project-title">Cafe Obregado</h3>
+                            <p class="project-desc">
+                                Elegant, responsive digital storefront for Cafe Obregado featuring dynamic menu showcases, immersive culinary media, and interactive guest reservation inquiries.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-tech-tags">
+                                <span>HTML5 / CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Digital Menu</span>
+                                <span>Vercel</span>
+                            </div>
+                            <span class="project-link-label">Visit Platform <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Project 6: AgriAgent AI -->
+                    <a href="https://agri-agent-ashy.vercel.app" target="_blank" rel="noopener noreferrer"
+                        class="project-card glass-panel interactive-link" id="project-agri-agent">
+                        <div class="project-top">
+                            <div class="project-badge-row">
+                                <span class="tag-pill">AGRICULTURAL AI PLATFORM</span>
+                                <span class="live-indicator"><span class="tiny-pulse"></span> LIVE</span>
+                            </div>
+                            <div class="card-arrow-wrap">
+                                <i class="fa-solid fa-arrow-up-right card-arrow arrow-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3 class="project-title">AgriAgent AI</h3>
+                            <p class="project-desc">
+                                Intelligent agricultural AI system leveraging predictive models and automated backend processing to empower farmers with crop yield analytics and crop disease diagnosis.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-tech-tags">
+                                <span>Python</span>
+                                <span>AI Models</span>
+                                <span>FastAPI</span>
+                                <span>ML Analytics</span>
+                            </div>
+                            <span class="project-link-label">Visit Platform <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Project 7: Casa Diva Villa -->
+                    <a href="https://casa-diva-villa.vercel.app" target="_blank" rel="noopener noreferrer"
+                        class="project-card glass-panel interactive-link" id="project-casa-diva">
+                        <div class="project-top">
+                            <div class="project-badge-row">
+                                <span class="tag-pill">LUXURY REAL ESTATE EXPERIENCE</span>
+                                <span class="live-indicator"><span class="tiny-pulse"></span> LIVE</span>
+                            </div>
+                            <div class="card-arrow-wrap">
+                                <i class="fa-solid fa-arrow-up-right card-arrow arrow-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="project-body">
+                            <h3 class="project-title">Casa Diva Villa</h3>
+                            <p class="project-desc">
+                                High-end luxury villa experience portal showcasing interactive room tours, private pool amenities, and direct reservation inquiries with cinematic media.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <div class="project-tech-tags">
+                                <span>Modern Web UX</span>
+                                <span>Responsive Design</span>
+                                <span>Media Engine</span>
+                                <span>Vercel</span>
+                            </div>
+                            <span class="project-link-label">Explore Villa <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </a>
                 </div>

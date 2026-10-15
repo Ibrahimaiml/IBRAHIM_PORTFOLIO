@@ -315,13 +315,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       6. HERO VIDEO AUTOPLAY FALLBACK RECOVERY
+       6. HERO VIDEO AUDIO INTEGRATION & INTERACTIVE TOGGLE CONTROLLER
        ========================================================================== */
     const heroVideo = document.getElementById('hero-bg-video');
+    const audioToggleBtn = document.getElementById('hero-audio-toggle');
+
+    function updateAudioButtonUI() {
+        if (!heroVideo || !audioToggleBtn) return;
+        if (heroVideo.muted || heroVideo.volume === 0) {
+            audioToggleBtn.textContent = '📁 Unmute Audio';
+            audioToggleBtn.setAttribute('aria-label', 'Unmute audio');
+            audioToggleBtn.classList.remove('is-unmuted');
+        } else {
+            audioToggleBtn.textContent = '🔊 Mute Audio';
+            audioToggleBtn.setAttribute('aria-label', 'Mute audio');
+            audioToggleBtn.classList.add('is-unmuted');
+        }
+    }
+
     if (heroVideo) {
-        heroVideo.play().catch(() => {
-            heroVideo.muted = true;
-            heroVideo.play();
-        });
+        // Attempt initial unmuted autoplay per requirement (muted attribute removed)
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+            playPromise
+                .then(() => {
+                    // Autoplay succeeded with audio allowed by environment
+                    updateAudioButtonUI();
+                })
+                .catch(() => {
+                    // Browser autoplay policy restricted unmuted playback: mute and play
+                    heroVideo.muted = true;
+                    heroVideo.play().catch(() => {});
+                    updateAudioButtonUI();
+                });
+        }
+
+        if (audioToggleBtn) {
+            audioToggleBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (heroVideo.muted || heroVideo.volume === 0) {
+                    heroVideo.muted = false;
+                    heroVideo.volume = 1.0;
+                    heroVideo.play().then(() => {
+                        updateAudioButtonUI();
+                    }).catch(() => {
+                        updateAudioButtonUI();
+                    });
+                } else {
+                    heroVideo.muted = true;
+                    updateAudioButtonUI();
+                }
+            });
+        }
+
+        heroVideo.addEventListener('volumechange', updateAudioButtonUI);
     }
 });
